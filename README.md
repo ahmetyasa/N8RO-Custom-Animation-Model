@@ -1,5 +1,3 @@
-# N8RO Custom Animation Model
-
 ## Student
 Ahmet Yaşa
 
@@ -24,7 +22,7 @@ Affected Joints:
 
 ## Video Demonstration
 
-[https://youtu.be/1NxvZ6GIE0I](https://youtu.be/1NxvZ6GIE0I)
+https://youtu.be/1NxvZ6GIE0I
 
 ## Files
 
