@@ -1,38 +1,33 @@
-// Arkheon Simulation Technologies
-// Proprietary and Confidential.
-// Unauthorized copying of this file, via any medium, is strictly prohibited.
-// © Arkheon Simulation Technologies. All rights reserved.
+# N8RO Custom Animation Model
 
-# sim-char-anim-custom-model
+## Student
+Ahmet Yaşa
 
-This sample plugin demonstrates how to provide `animationModelCustom` for non-Nathan rigs by registering a model prototype.
+## Description
 
-## What This Sample Demonstrates
+This project implements a custom animation model plugin for N8RO.
 
-- Runtime plugin contract (`arkheon::astlib::IPlugin`)
-- Model prototype registration with `IModelPluginService::modelFactoryRegistry().registerFactory(...)`
-- Custom model type (`animationModelCustom`) and animation code (`Custom Idle`)
-- Non-Nathan workflow where users define model profile/schema variants manually
-- Initialize-time registration only (runtime hot registration is not supported)
+A new animation model called `animationModelCustom` is registered through the plugin.
 
-## Manual UI/Schema Steps (Required)
+When the animation state is set to `Custom Idle`, the model overrides arm joints and generates a simple idle motion using sinusoidal movement.
 
-1. Create or edit a **Model** profile in UI:
-   - `type = animation`
-   - `type/animation = animationModelCustom`
-   - `type/animation/animationModelCustom/ecmRole = animation`
-2. Add your custom animation metadata list under the custom model branch (for example `Custom Idle`).
-3. In the target `componentAnimation` profile, bind this model profile in `modelList` (role resolves to `animation` via `ecmRole`).
-4. Set `componentAnimation/config/defaultAnimation = Custom Idle`.
-5. Use your non-Nathan skeleton/rig mapping data in your custom model schema branch.
+## Motion State
 
-## Build
+Animation State:
+- Custom Idle
 
-```bat
-open-solution.cmd
-```
+Affected Joints:
+- leftShoulder
+- rightShoulder
+- leftElbow
+- rightElbow
 
-## Output
+## Video Demonstration
 
-- Built DLL: `%N8RO_RELEASE%\dev\samples\sim\sim-char-anim-custom-model\bin\release\sim-char-anim-custom-model.dll`
-- Auto-deployed DLL: `%N8RO_RELEASE_USER_SIM_PLUGINS%\sim-char-anim-custom-model.dll`
+[https://youtu.be/1NxvZ6GIE0I](https://youtu.be/1NxvZ6GIE0I)
+
+## Files
+
+- SimCharAnimCustomModelPlugin.cpp
+- SimCharAnimCustomModelPlugin.h
+- AnimationModelCustom.json.gz
