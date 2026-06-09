@@ -66,19 +66,7 @@ if not exist "$(N8RO_RELEASE)\lib\arkheon-astlib.lib" (
       <AdditionalDependencies>arkheon-astlib.lib;arkheon-astdb.lib;n8ro-db.lib;arkheon-astsim.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>if "$(N8RO_RELEASE_USER_SIM_PLUGINS)"=="" (
-  echo [Error] N8RO_RELEASE_USER_SIM_PLUGINS is not defined. Run dist\setup.cmd before building.
-  exit /b 1
-)
-if not exist "$(N8RO_RELEASE_USER_SIM_PLUGINS)" (
-  mkdir "$(N8RO_RELEASE_USER_SIM_PLUGINS)"
-)
-copy /Y "$(TargetPath)" "$(N8RO_RELEASE_USER_SIM_PLUGINS)\" &gt;nul
-if errorlevel 1 (
-  echo [Error] Failed to deploy plugin DLL to $(N8RO_RELEASE_USER_SIM_PLUGINS)
-  exit /b 1
-)
-echo [Deploy] sim-char-anim-custom-model.dll copied to $(N8RO_RELEASE_USER_SIM_PLUGINS)</Command>
+      <Command>if not exist "C:\N8RO\userPlugins\sim" mkdir "C:\N8RO\userPlugins\sim"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
