@@ -22,7 +22,7 @@ Affected Joints:
 
 ## Video Demonstration
 
-https://youtu.be/1NxvZ6GIE0I
+https://www.youtube.com/watch?v=THx-WlCydoU
 
 ## Files
 
